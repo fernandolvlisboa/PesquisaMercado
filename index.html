@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Manual (v3) — Pesquisa & Redação de Mercado para Valuation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{--ink:#15293b;--muted:#5b6b7a;--bg:#fff;--line:#e6ecf2;--accent:#0d6efd}
+    html,body{margin:0;padding:0;background:var(--bg);color:#111;
+      font:16px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif}
+    header{padding:28px 24px;border-bottom:1px solid var(--line);background:#f7fbff}
+    header h1{margin:0 0 6px;color:var(--ink);font-size:26px}
+    header p{margin:0;color:var(--muted)}
+    nav{padding:12px 24px;border-bottom:1px solid var(--line);background:#fcfcfc}
+    nav a{margin-right:16px;color:var(--accent);text-decoration:none}
+    main{padding:24px;max-width:1100px}
+    h2{margin-top:36px;color:var(--ink)}
+    h3{margin-top:26px;color:#253a50}
+    h4{margin-top:18px;color:#3b4d5f}
+    p,li{max-width:100ch}
+    code{background:#f0f4f8;padding:.1em .35em;border-radius:4px}
+    .box{border:1px solid var(--line);padding:16px;border-radius:10px;background:#fff}
+    .ok{border-left:4px solid #16a34a}
+    .warn{border-left:4px solid #f59e0b}
+    .bad{border-left:4px solid #ef4444}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    table{border-collapse:collapse;width:100%;margin:12px 0}
+    th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+    .small{font-size:13px}
+    aside{font-size:13px;color:var(--muted)}
+    .tag{display:inline-block;padding:2px 6px;border-radius:6px;background:#eef4ff;color:#0a3f7a;font-size:12px;margin:0 6px 0 0}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Manual (v3) — Pesquisa & Redação de Mercado para Valuation</h1>
+  <p class="muted">Foco em narrativa de ecossistema (empresa real) + concisão e imparcialidade. CNAE como apoio, não limitador.</p>
+</header>
+
+<nav>
+  #objetivoObjetivo</a>
+  #contextoContexto de uso (CPC)</a>
+  #principiosPrincípios de redação (obrigatórios)</a>
+  #fontesPrioridade de fontes & descoberta</a>
+  #processoProcesso de pesquisa (5 fases)</a>
+  #filtroFiltrar, validar e priorizar</a>
+  #medidasMedições e cálculos padrão</a>
+  #estruturaEstrutura recomendada (seção de mercado)</a>
+  <a hrefGuia de escrita</a>
+  #templateTemplate (5 blocos)</a>
+  <a href="#explo aplicado (varejo → transportes)</a>
+  #checklistChecklist & Log</a>
+  #refsReferências</a>
+</nav>
+
+<main>
+<section id="objetivo">
+  <h2>1) Objetivo</h2>
+  <p>Orientar <strong>pesquisa</strong> e <strong>redação</strong> de mercado para relatórios de valuation, com ênfase no <strong>ecossistema real da empresa/ativo</strong> (adjacências, parcerias, canais, plataforma, geografia), e não apenas em classificações formais. O texto final deve ser <em>expositivo, conciso e rastreável</em>, cobrindo <strong>Definição & Escopo</strong>, <strong>Tamanho & Histórico</strong>, <strong>Perspectivas</strong>, <strong>Riscos & Oportunidades</strong> e <strong>Referências</strong>.</p>
+</section>
+
+<section id="contexto">
+  <h2>2) Contexto de uso (normas CPC – somente o essencial)</h2>
+  <ul>
+    <li>Este manual apoia seções usadas em impairment (CPC 01), combinações de negócios (CPC 15) e valor justo (CPC 46). Não é um guia normativo.</li>
+    <li>Adote a ótica de <strong>“participantes de mercado”</strong> (CPC 46) ao construir perspectivas e selecionar proxies (preços, taxa livre de risco/curva, práticas de mercado). [1](https://dados.abcomm.org/indicadores)</li>
+  </ul>
+</section>
+
+<section id="principios">
+  <h2>3) Princípios de redação (obrigatórios)</h2>
+  <ul>
+    <li><strong>Imparcialidade</strong>: sem adjetivos; apenas fatos, séries, datas e fontes.</li>
+    <li><strong>Concisão</strong>: destaque o que afeta premissas de valuation (g, margens, capex, risco).</li>
+    <li><strong>Rastreabilidade</strong>: cada número com <em>fonte + data + unidade</em>.</li>
+    <li><strong>Consistência</strong>: mesma moeda, mesma base de preços (IPCA) e janela temporal. [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)</li>
+    <li><strong>Materialidade</strong>: inclua somente fatores com impacto não trivial nas premissas.</li>
+  </ul>
+</section>
+
+<section id="fontes">
+  <h2>4) Prioridade de fontes & como descobrir novas</h2>
+
+  <h3>4.1 Pirâmide de prioridade</h3>
+  <ol>
+    <li><strong>Ecossistema do emissor</strong>: FRE/CVM, apresentações e calls de RI; documentos B3/Empresas.Net. [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)[9](https://www.biodieselbr.com/noticias/biocombustivel/negocio/diesel-gasolina-e-etanol-atingem-recorde-na-serie-historica-da-anp-puxados-pelo-petroleo-090321)</li>
+    <li><strong>Imprensa e análises setoriais confiáveis</strong> para dinâmica competitiva e M&A (usar com triangulação).</li>
+    <li><strong>Dados oficiais/reguladores</strong>: IBGE/SIDRA (IPCA, PNAD), BCB (PTAX; meios de pagamento; ESTBAN), ANEEL/ANP/ANATEL/ANTT/ANS/ANVISA/EPE, Comex Stat. [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)[6](https://basedosdados.org/dataset/9fa532fb-5681-4903-b99d-01dc45fd527a)[11](https://www.econ.puc-rio.br/datazoom/english/pnadc.html)[12](https://portal.febraban.org.br/pagina/3106/1117/pt-br/pesquisa)[13](https://www.apcsp.org.br/downloads/APC2020_18%20CPC46%20Mensuracao%20do%20Valor%20Justo-min.pdf)[14](https://portalrelatorios.aneel.gov.br/)[15](https://comexstat.mdic.gov.br/pt/home)[16](https://data.worldbank.org/country)[17](https://teletime.com.br/17/04/2025/anatel-lanca-painel-com-dados-coletados-entre-empresas-de-telecom/)[18](https://vriconsulting.com.br/artigo.php?id=743&titulo=pronunciamento-tecnico-cpc-01)[19](https://portalbrasil.net/igpm/)</li>
+    <li><strong>Associações/consultorias do nicho</strong>: Greener (energia solar), ABRAED (pequenas encomendas), ABComm (e‑commerce), FEBRABAN (estudos de tecnologia bancária), etc. [2](https://www.gov.br/pt-br/servicos/solicitar-consulta-as-estatisticas-da-rais-e-do-caged)[3](https://questionarios.ibge.gov.br/downloads-questionarios/pia-pesquisa-industrial-anual-empresa-e-pia-pesquisa-industrial-anual-produto.html)[4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)[20](https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-vigilancia-sanitaria-anvisa)</li>
+    <li><strong>CNAE (CONCLA)</strong>: uso auxiliar para padronização do escopo (não como limite). [21](https://www.gov.br/mme/pt-br/arquivos/minuta-do-plano-decenal-de-expans-o-de-energia-2030-pde-2030.pdf)</li>
+  </ol>
+
+  <h3>4.2 Heurísticas para “achar” novas fontes</h3>
+  <div class="box ok">
+    <ul>
+      <li>Busca: <code>"associação [setor] dados"</code>, <code>"observatório [setor] indicadores"</code>, <code>"dados abertos [autarquia] painel"</code>, <code>"site:gov.br painel [setor]"</code>, <code>"NCM [produto] comex"</code>. [19](https://portalbrasil.net/igpm/)[15](https://comexstat.mdic.gov.br/pt/home)</li>
+      <li>Procure <strong>painéis Power BI</strong> de autarquias (ANTT, ANEEL, ANP) e exporte séries. [15](https://comexstat.mdic.gov.br/pt/home)[22](https://febracan.com.br/)[13](https://www.apcsp.org.br/downloads/APC2020_18%20CPC46%20Mensuracao%20do%20Valor%20Justo-min.pdf)</li>
+      <li>Valide siglas (ex.: “FEBRACAN” ≠ logística; para pequenas encomendas, use **ABRAED**). [3](https://questionarios.ibge.gov.br/downloads-questionarios/pia-pesquisa-industrial-anual-empresa-e-pia-pesquisa-industrial-anual-produto.html)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="processo">
+  <h2>5) Processo de pesquisa (5 fases, reprodutível)</h2>
+  <h3>Fase 1 — Preparação</h3>
+  <ol>
+    <li>Defina <strong>ecossistema e escopo</strong> (produto/serviço, canais, adjacências, geografia; cite o que <em>fica fora</em>). Baseie-se em filings/RI e cobertura setorial. [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)</li>
+    <li>Mapeie <strong>perguntas materialmente relevantes</strong> para o valuation (TAM/SAM/SOM; drivers; input‑preço; regulação; concentração; dependências de importação/exportação).</li>
+    <li>Registre CNAE/NCM apenas como referência auxiliar, quando útil. [21](https://www.gov.br/mme/pt-br/arquivos/minuta-do-plano-decenal-de-expans-o-de-energia-2030-pde-2030.pdf)</li>
+  </ol>
+
+  <h3>Fase 2 — Coleta</h3>
+  <ul>
+    <li><strong>Macro/Preços</strong>: IPCA/PNAD (SIDRA) e PTAX para conversões. [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[23](https://www.gov.br/anatel/pt-br/dados/paineis)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+    <li><strong>Setoriais</strong>: ANEEL, ANP (preços de combustíveis), ANATEL, ANTT, ANS, ANVISA, EPE, Comex Stat. [12](https://portal.febraban.org.br/pagina/3106/1117/pt-br/pesquisa)[24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)[14](https://portalrelatorios.aneel.gov.br/)[15](https://comexstat.mdic.gov.br/pt/home)[16](https://data.worldbank.org/country)[17](https://teletime.com.br/17/04/2025/anatel-lanca-painel-com-dados-coletados-entre-empresas-de-telecom/)[18](https://vriconsulting.com.br/artigo.php?id=743&titulo=pronunciamento-tecnico-cpc-01)[19](https://portalbrasil.net/igpm/)</li>
+    <li><strong>Associações/consultorias</strong>: Greener (solar), ABRAED (pequenas encomendas), ABComm (e‑commerce), FEBRABAN (tecnologia bancária). [2](https://www.gov.br/pt-br/servicos/solicitar-consulta-as-estatisticas-da-rais-e-do-caged)[3](https://questionarios.ibge.gov.br/downloads-questionarios/pia-pesquisa-industrial-anual-empresa-e-pia-pesquisa-industrial-anual-produto.html)[4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)[20](https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-vigilancia-sanitaria-anvisa)</li>
+  </ul>
+
+  <h3>Fase 3 — Triangulação e normalização</h3>
+  <ul>
+    <li>Para cada estatística crítica, tenha <strong>≥2 fontes</strong> independentes.</li>
+    <li><strong>Normalize</strong> moeda (R$/US$), base de preços (deflacionar por IPCA), período e geografia. [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+  </ul>
+
+  <h3>Fase 4 — Síntese</h3>
+  <ul>
+    <li>Converta achados em <strong>frases curtas com números</strong>, datas e fontes; elimine redundâncias.</li>
+    <li>Priorize impactos em g, margens, capex, risco e custo de capital (curva ANBIMA quando aplicável). [25](https://dados.antt.gov.br/)</li>
+  </ul>
+
+  <h3>Fase 5 — Registro</h3>
+  <ul>
+    <li>Mantenha <strong>Log de Pesquisa</strong> (fonte, parâmetros da consulta, data, arquivo, responsável).</li>
+  </ul>
+</section>
+
+<section id="filtro">
+  <h2>6) Como filtrar, validar e priorizar informações</h2>
+  <div class="grid cols-2">
+    <div class="box ok">
+      <h3>Priorize (A‑R‑C‑O)</h3>
+      <ul>
+        <li><strong>Autoridade</strong> (filings, reguladores, dados oficiais).</li>
+        <li><strong>Recência</strong> (últimas divulgações/painéis).</li>
+        <li><strong>Cobertura</strong> (granularidade correta: Brasil/UF/município/segmento).</li>
+        <li><strong>Objetividade</strong> (metodologia clara, sem conflito comercial aparente).</li>
+      </ul>
+    </div>
+    <div class="box warn">
+      <h3>Red flags</h3>
+      <ul>
+        <li>Números sem fonte/data; unidades misturadas (R$ correntes vs. reais; FOB/CIF; litros/toneladas).</li>
+        <li>Mudança metodológica não documentada (ex.: séries ANP/ANTT possuem notas técnicas). [26](https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/balanco-energetico-nacional-ben)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="medidas">
+  <h2>7) Medições e cálculos padrão</h2>
+  <h3>7.1 Crescimento</h3>
+  <p><strong>CAGR</strong>: <code>((Vf/Vi)^(1/n) - 1)</code></p>
+
+  <h3>7.2 Deflacionamento e câmbio</h3>
+  <ul>
+    <li>Deflacionar por <strong>IPCA</strong> (declare base: “preços de [mês/ano]”). [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)</li>
+    <li>Converter moeda com <strong>PTAX média</strong> do período declarado. [10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+  </ul>
+
+  <h3>7.3 Estrutura competitiva</h3>
+  <ul>
+    <li><strong>Participação</strong>: <code>quota_i = vendas_i / vendas_totais</code></li>
+    <li><strong>HHI</strong>: <code>Σ (quota_i × 100)^2</code> (0–10.000)</li>
+  </ul>
+
+  <h3>7.4 Mercado</h3>
+  <ul>
+    <li><strong>TAM</strong> (mercado total), <strong>SAM</strong> (endereçável), <strong>SOM</strong> (capturável), explicitando suposições.</li>
+  </ul>
+</section>
+
+<section id="estrutura">
+  <h2>8) Estrutura recomendada da seção de mercado (no relatório)</h2>
+  <ol>
+    <li><strong>Definição & Escopo</strong> (ecossistema do emissor/alvo; o que entra/fica fora; CNAE/NCM como apoio). [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)[21](https://www.gov.br/mme/pt-br/arquivos/minuta-do-plano-decenal-de-expans-o-de-energia-2030-pde-2030.pdf)</li>
+    <li><strong>Tamanho & Histórico</strong> (volume/valor; 3–5 anos; preços/insumos; padronização IPCA/PTAX). [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+    <li><strong>Perspectivas</strong> (3–5 anos; intervalos e drivers; estudos e painéis reconhecidos). [18](https://vriconsulting.com.br/artigo.php?id=743&titulo=pronunciamento-tecnico-cpc-01)</li>
+    <li><strong>Riscos & Oportunidades</strong> (3–6 itens com gatilhos e, se possível, probabilidade/impacto).</li>
+    <li><strong>Referências</strong> (links, datas de acesso; parâmetros das consultas relevantes).</li>
+  </ol>
+</section>
+
+<section id="estilo">
+  <h2>9) Guia de escrita (estilo e linguagem)</h2>
+  <div class="grid cols-2">
+    <div class="box bad">
+      <h3>Evite</h3>
+      <ul>
+        <li>“Setor <em>muito promissor</em>…” / “demanda <em>fortíssima</em>…”</li>
+        <li>Informações sem fonte, sem data, sem unidade.</li>
+      </ul>
+    </div>
+    <div class="box ok">
+      <h3>Faça assim</h3>
+      <ul>
+        <li>“Vendas domésticas de [produto] somaram <strong>[X]</strong> em <strong>[AAAA]</strong>, +<strong>[Y%]</strong> a/a (fonte: [link]).”</li>
+        <li>“IPCA 12m em <strong>[Mês/AAAA]</strong>: <strong>[Z%]</strong>, base para deflação de séries.” [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)</li>
+        <li>“Conversões para USD usam PTAX média de <strong>[período]</strong>.” [10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="template">
+  <h2>10) Template (5 blocos, texto-modelo “nível consultoria”)</h2>
+  <div class="box">
+<pre>
+<strong>1) Definição & Escopo</strong>
+Este relatório considera o <em>mercado de [descrição clara]</em> no qual a [companhia/ativo] opera, com foco em [segmentos/clientes/canais] em [geografia]. 
+A análise parte do <strong>ecossistema do emissor</strong> (parcerias, rede, plataformas, adjacências) conforme filings/RI e cobertura setorial, 
+utilizando <strong>CNAE/NCM apenas como referência auxiliar</strong> de padronização. [URLs de FRE/RI e matérias]. 
+(Fonte: FRE/CVM; B3/Empresas.Net) [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)[9](https://www.biodieselbr.com/noticias/biocombustivel/negocio/diesel-gasolina-e-etanol-atingem-recorde-na-serie-historica-da-anp-puxados-pelo-petroleo-090321)
+
+<strong>2) Tamanho & Histórico (volume e valor)</strong>
+Entre [AAAA0–AAAA], o mercado movimentou [VOLUME] [unid] e [VALOR] [R$/US$] — séries homogêneas em moeda/base de preços 
+(deflacionadas por IPCA, “preços de [mês/ano]”; conversões por PTAX média do período). 
+Indicadores complementares: [preços/insumos regulados, ex. diesel ANP; acessos/atividade ANTT/ANATEL/ANEEL quando aplicável]. 
+(Fontes: IBGE/SIDRA; BCB/PTAX; ANP; ANTT/ANATEL/ANEEL) [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)[24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)[15](https://comexstat.mdic.gov.br/pt/home)
+
+<strong>3) Perspectivas (3–5 anos)</strong>
+O intervalo de crescimento esperado é [a–b% a.a.], derivado de [drivers] e benchmarks de [estudos reconhecidos/paineis setoriais], 
+considerando a ótica de <em>participantes de mercado</em>. Principais premissas: [lista objetiva]. 
+(Fontes: EPE/PDE; reguladores; associações/consultorias, p.ex. ABComm/Greener) [18](https://vriconsulting.com.br/artigo.php?id=743&titulo=pronunciamento-tecnico-cpc-01)[4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)[2](https://www.gov.br/pt-br/servicos/solicitar-consulta-as-estatisticas-da-rais-e-do-caged)
+
+<strong>4) Riscos & Oportunidades</strong>
+Riscos: [R1 – gatilho; R2 – custo-insumo (ex.: diesel ANP); R3 – concorrência/regulação (ANTT/ANS/ANATEL); R4 – integração]. 
+Oportunidades: [O1 – densidade/escala; O2 – monetização de capacidades; O3 – expansão geográfica/portfólio].
+(Fontes indicativas: ANP; ANTT; [regulador do setor]) [24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)[15](https://comexstat.mdic.gov.br/pt/home)
+
+<strong>5) Referências</strong>
+[Listar todas as URLs com data de acesso e, quando aplicável, parâmetros de consulta (SIDRA/Comex/Power BI)]
+</pre>
+  </div>
+</section>
+
+<section id="exemplo">
+  <h2>11) Exemplo aplicado — Varejo adquirindo transportes (não massante)</h2>
+  <div class="box">
+    <h4>1) Definição & Escopo</h4>
+    <p>Mercado de <strong>logística de pequenas encomendas/carga fracionada (B2C/B2B leve)</strong> com foco em transferência + last‑mile, 
+    atendendo principalmente e‑commerce e redes omnicanal. O <strong>ecossistema do alvo</strong> abrange hubs de cross‑docking, linha‑hauls dedicados, 
+    rede PUDO e integração com marketplaces. (Base: filings da compradora/alvo e cobertura setorial). [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)</p>
+
+    <h4>2) Tamanho & Histórico</h4>
+    <p>O e‑commerce é o principal driver de volumes; a <strong>ABComm</strong> publica indicadores e projeções de lojas, pedidos e ticket médio. [4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben) 
+    O <strong>diesel</strong> (insumo crítico) tem série oficial de preços pela <strong>ANP</strong>, utilizada como base de indexadores em frete. [24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas) 
+    A <strong>ANTT</strong> oferece painéis de dados para acompanhar atividade/fluxos de cargas. [15](https://comexstat.mdic.gov.br/pt/home)</p>
+
+    <h4>3) Perspectivas (3–5 anos)</h4>
+    <p>Crescimento do canal online (ABComm), automação operacional (sorters, roteirização), densidade via lojas/CDs da varejista 
+    e monetização de logística a terceiros suportam cenário de [x–y% a.a.]. [4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)</p>
+
+    <h4>4) Riscos & Oportunidades</h4>
+    <ul>
+      <li><strong>Combustível</strong> (ANP): volatilidade pressiona base de frete; cláusulas de repasse mitigam parcialmente. [24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)</li>
+      <li><strong>Execução</strong>: integração de malhas/TMS/WMS pode degradar SLA no curto prazo.</li>
+      <li><strong>Regulação/tributação</strong> (ANTT/ICMS pequenas encomendas): necessidade de compliance robusto. [15](https://comexstat.mdic.gov.br/pt/home)</li>
+      <li><strong>Oportunidades</strong>: densidade incremental, uso de lojas como mini‑hubs, PUDO e redução de ociosidade.</li>
+    </ul>
+
+    <h4>5) Referências</h4>
+    <p>ABComm (indicadores e projeções), ANP (preços de diesel), ANTT (painéis de cargas), filings/CVM. [4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)[24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)[15](https://comexstat.mdic.gov.br/pt/home)[8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)</p>
+  </div>
+</section>
+
+<section id="checklist">
+  <h2>12) Checklist rápido & Log de pesquisa</h2>
+  <div class="grid cols-2">
+    <div class="box">
+      <h3>Checklist</h3>
+      <ul>
+        <li>Sem adjetivos; frases curtas; números + data + fonte.</li>
+        <li>Moeda/base de preços e janela declaradas (IPCA/PTAX). [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)</li>
+        <li>Triangulação para estatísticas críticas (≥2 fontes).</li>
+        <li>Ecossistema descrito a partir de filings/RI; CNAE/NCM apenas como apoio. [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)[21](https://www.gov.br/mme/pt-br/arquivos/minuta-do-plano-decenal-de-expans-o-de-energia-2030-pde-2030.pdf)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Log (modelo)</h3>
+      <table>
+        <thead><tr><th>Item</th><th>Fonte</th><th>Parâmetros</th><th>Data</th><th>Arquivo</th><th>Resp.</th></tr></thead>
+        <tbody>
+          <tr><td>E‑commerce</td><td>ABComm</td><td>Indicadores 2021–2025</td><td>2025‑09‑10</td><td>abcomm_2021_2025.xlsx</td><td>[nome]</td></tr>
+          <tr><td>Diesel</td><td>ANP</td><td>Série semanal/mensal – S‑10</td><td>2025‑09‑10</td><td>anp_diesel_19_25.csv</td><td>[nome]</td></tr>
+          <tr><td>Cargas</td><td>ANTT</td><td>Painel transporte de cargas</td><td>2025‑09‑10</td><td>antt_cargas_20_25.csv</td><td>[nome]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="refs">
+  <h2>13) Referências essenciais (acesso público)</h2>
+  <ul>
+    <li><strong>CVM – FRE</strong> (Formulário de Referência). [8](https://conteudos.greener.com.br/estudo-grandes-usinas-2025)</li>
+    <li><strong>B3 – Empresas.Net</strong>. [9](https://www.biodieselbr.com/noticias/biocombustivel/negocio/diesel-gasolina-e-etanol-atingem-recorde-na-serie-historica-da-anp-puxados-pelo-petroleo-090321)</li>
+    <li><strong>IBGE/SIDRA</strong> (IPCA/PNAD/PIA). [7](https://www.bcb.gov.br/estatisticas/estatisticabancariamunicipios)[23](https://www.gov.br/anatel/pt-br/dados/paineis)[27](https://www.unccd.int/resources/knowledge-sharing-system/united-nations-commodity-trade-statistics-database-un-comtrade)</li>
+    <li><strong>BCB</strong> (PTAX; meios de pagamento; ESTBAN; dados abertos). [10](https://www.aedb.br/seget/arquivos/artigos15/512245.pdf)[6](https://basedosdados.org/dataset/9fa532fb-5681-4903-b99d-01dc45fd527a)[11](https://www.econ.puc-rio.br/datazoom/english/pnadc.html)[28](https://www.licempre.com.br/new-open-databases-from-anvisa/)</li>
+    <li><strong>ANTT</strong> (painéis e dados abertos). [15](https://comexstat.mdic.gov.br/pt/home)</li>
+    <li><strong>ANP</strong> (séries de preços combustíveis). [24](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/estatisticas)</li>
+    <li><strong>ANEEL</strong> (dados/painéis). [12](https://portal.febraban.org.br/pagina/3106/1117/pt-br/pesquisa)</li>
+    <li><strong>ANATEL</strong> (painéis de dados). [14](https://portalrelatorios.aneel.gov.br/)</li>
+    <li><strong>ANS</strong> (dados e indicadores). [16](https://data.worldbank.org/country)</li>
+    <li><strong>ANVISA</strong> (dados abertos/painéis). [17](https://teletime.com.br/17/04/2025/anatel-lanca-painel-com-dados-coletados-entre-empresas-de-telecom/)</li>
+    <li><strong>EPE</strong> (PDE/BEN). [18](https://vriconsulting.com.br/artigo.php?id=743&titulo=pronunciamento-tecnico-cpc-01)</li>
+    <li><strong>Comex Stat</strong> (MDIC/Secex). [19](https://portalbrasil.net/igpm/)</li>
+    <li><strong>ABComm</strong> (indicadores e‑commerce). [4](https://www.epe.gov.br/pt/publicacoes-dados-abertos/dados-abertos/dados-abertos-do-balan%C3%A7o-energ%C3%A9tico-nacional-ben)</li>
+    <li><strong>ABRAED</strong> (pequenas encomendas). [3](https://questionarios.ibge.gov.br/downloads-questionarios/pia-pesquisa-industrial-anual-empresa-e-pia-pesquisa-industrial-anual-produto.html)</li>
+    <li><strong>Greener</strong> (inteligência em energia solar). [2](https://www.gov.br/pt-br/servicos/solicitar-consulta-as-estatisticas-da-rais-e-do-caged)</li>
+    <li><strong>FEBRABAN</strong> (Radar/Pesquisa de Tecnologia bancária), quando aplicável. [5](https://www.gov.br/anvisa/pt-br/acessoainformacao/dadosabertos)[20](https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-vigilancia-sanitaria-anvisa)</li>
+    <li><strong>CONCLA/IBGE</strong> (busca CNAE). [21](https://www.gov.br/mme/pt-br/arquivos/minuta-do-plano-decenal-de-expans-o-de-energia-2030-pde-2030.pdf)</li>
+  </ul>
+</section>
+
+<hr />
+<aside class="small">
+  © Manual v3 — restaura princípios, 5 fases, filtros, cálculos, estilo e checklist; adiciona prioridade por ecossistema, 
+  normas apenas como contexto e heurísticas para descobrir fontes (Greener, ABRAED, ABComm).
+</aside>
+</main>
+</body>
+</html>
